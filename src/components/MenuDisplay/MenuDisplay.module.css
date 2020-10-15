@@ -1,0 +1,17 @@
+.MenuDisplay {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.MenuDisplay p {
+  margin: 5px 0;
+}
+
+.MenuDisplay h1 {
+  margin: 5px 0;
+}

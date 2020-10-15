@@ -1,0 +1,9 @@
+.Sidebar {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-right: 1px solid #ccc;
+}

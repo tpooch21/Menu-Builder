@@ -1,0 +1,12 @@
+.SidebarItem {
+  width: 75%;
+  height: 50px;
+  margin: 10px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.SidebarItem p {
+  margin: 2px 0;
+  line-height: 25px;
+}

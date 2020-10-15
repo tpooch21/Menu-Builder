@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Sidebar from "./components/Sidebar/Sidebar";
+import restaurants from "./data";
+import MenuDisplay from "./components/MenuDisplay/MenuDisplay";
 
 function App() {
+  const [restaurantData, updateRestaurants] = useState(restaurants);
+  const [currentRestaurant, updateCurrentRestaurant] = useState(restaurants[0]);
+
+  const handleRestaurantSelection = (name) => {
+    const currentIndex = restaurantData.findIndex((rest) => {
+      return rest.name === name;
+    });
+    const restaurant = restaurantData[currentIndex];
+
+    updateCurrentRestaurant(restaurant);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar
+        restaurants={restaurantData}
+        selectRestaurant={handleRestaurantSelection}
+      />
+      <MenuDisplay
+        name={currentRestaurant.name}
+        category={currentRestaurant.category}
+        items={currentRestaurant.items}
+      />
     </div>
   );
 }
